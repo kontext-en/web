@@ -1,18 +1,20 @@
-import { useState, useEffect } from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import './styles/custom.scss'
+import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom'
+import Index from './pages/Index.jsx'
+import Books from './pages/Books.jsx'
+import Header from './components/header/Header.jsx'
 
-import Header from './components/header/Header'
-import Banner from './components/banner/Banner'
-import About from './components/about/About'
-
-function App() {
-  return (
-    <>
-      <Header />
-      <Banner />
-      <About />
-    </>
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path='/kontext'>
+      <Route index element={<Index />} />
+      <Route path='books' element={<Books />} />
+    </Route>
   )
+)
+
+function App({routes}) {
+  return <RouterProvider router={router}/>
 }
 
 export default App
