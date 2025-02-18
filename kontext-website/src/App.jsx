@@ -1,3 +1,4 @@
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import './styles/custom.scss'
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom'
 import Index from './pages/Index.jsx'
@@ -14,7 +15,9 @@ const router = createBrowserRouter(
 )
 
 function App({routes}) {
-  return <RouterProvider router={router}/>
+  return <div style={{minHeight: '100vh'}}>
+    <RouterProvider router={router}/>
+  </div>
 }
 
 export default App
