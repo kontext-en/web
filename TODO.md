@@ -1,0 +1,4 @@
+- [ ] Create Static API
+- [ ] Fetch from said API
+- [ ] Cleanup Homepage UI
+- [ ] Add About Us section with pages for ppl who worked on project.
