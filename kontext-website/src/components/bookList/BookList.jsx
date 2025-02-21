@@ -1,5 +1,6 @@
 import { Stack, Card, Container, Col, Row } from "react-bootstrap"
 import { useNavigate } from "react-router-dom";
+import API_ROOT_URL from "../../tmpAPI";
 
 function BookCard({title, author, publishDate, img, id}) {
   const nav = useNavigate();
@@ -10,7 +11,7 @@ function BookCard({title, author, publishDate, img, id}) {
     }}
     style={{cursor: 'pointer'}}
   >
-    <Card.Img variant="top" src={img.src} style={{maxHeight: '10rem', objectFit: 'cover'}} />
+    <Card.Img variant="top" src={API_ROOT_URL+img.src} style={{maxHeight: '10rem', objectFit: 'cover'}} />
     <Card.Body>
       <Card.Title>{title}</Card.Title>
       <Card.Text>

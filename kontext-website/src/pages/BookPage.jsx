@@ -1,8 +1,8 @@
 import { Container } from "react-bootstrap"
 import { useParams } from "react-router-dom"
-import BOOK_DATA from "../tmpAPI";
-import Header from "../components/header/Header";
-import Footer from "../components/footer/Footer";
+import { useState, useEffect } from "react";
+import API_ROOT_URL from "../tmpAPI";
+import App from "../App";
 
 function Content({title, bookId}) {
   return <Container>
@@ -13,16 +13,19 @@ function Content({title, bookId}) {
 function BookPage({}) {
 
   const {id} = useParams();
+  const [bookData, setBookData] = useState();
 
-  return <>
-    <div style={{minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
-      <div>
-        <Header />
-        <Content {...BOOK_DATA[id]} bookId={id} />
-      </div>
-      <Footer />
-    </div>
-  </>
+  useEffect(() => {
+    fetch(API_ROOT_URL+"/content.json")
+    .then(data=>data.json())
+    .then(data=>{
+      console.log(data);
+      setBookData(data);
+    })
+    .catch(err=>console.error(err));
+  }, [])
+
+  return <App>{bookData&&<Content {...bookData[id]} bookId={id} />}</App>
 }
 
 export default BookPage
