@@ -7,7 +7,7 @@ import BookPage from './pages/BookPage.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='/kontext'>
+    <Route path='/web'>
       <Route index element={<Index />} />
       <Route path='books' element={<Books />} />
       <Route path='books/:id' element={<BookPage />} />
