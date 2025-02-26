@@ -4,10 +4,11 @@ import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } 
 import Index from './pages/Index.jsx'
 import Books from './pages/Books.jsx'
 import BookPage from './pages/BookPage.jsx';
+import App from './App.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='/web'>
+    <Route path='/' element={<App/>}>
       <Route index element={<Index />} />
       <Route path='books' element={<Books />} />
       <Route path='books/:id' element={<BookPage />} />
@@ -16,9 +17,7 @@ const router = createBrowserRouter(
 )
 
 function Routes({routes}) {
-  return <div style={{minHeight: '100vh'}}>
-    <RouterProvider router={router}/>
-  </div>
+  return <><RouterProvider router={router}/></>
 }
 
 export default Routes

@@ -30,4 +30,4 @@ $theme-colors: (
 );
 
 // Import Bootstrap and its default variables
-@use '~bootstrap/scss/bootstrap.scss';
+@import '~bootstrap/scss/bootstrap.scss';

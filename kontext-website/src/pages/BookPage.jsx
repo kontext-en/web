@@ -2,7 +2,6 @@ import { Container } from "react-bootstrap"
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react";
 import API_ROOT_URL from "../tmpAPI";
-import App from "../App";
 
 function Content({title, bookId}) {
   return <Container>
@@ -25,7 +24,7 @@ function BookPage({}) {
     .catch(err=>console.error(err));
   }, [])
 
-  return <App>{bookData&&<Content {...bookData[id]} bookId={id} />}</App>
+  return <>{bookData&&<Content {...bookData[id]} bookId={id} />}</>
 }
 
 export default BookPage

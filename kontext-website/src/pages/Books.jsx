@@ -1,6 +1,5 @@
 
 import { useEffect, useState } from 'react';
-import App from '../App.jsx';
 import BookList from '../components/bookList/BookList.jsx'
 import API_ROOT_URL from "../tmpAPI";
 
@@ -18,7 +17,7 @@ function Books() {
     .catch(err=>console.error(err));
   }, [])
 
-  return <App>{bookData&&<BookList bookData={bookData} />}</App>
+  return <>{bookData&&<BookList bookData={bookData} />}</>
 }
 
 export default Books

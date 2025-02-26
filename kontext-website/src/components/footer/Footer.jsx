@@ -3,7 +3,7 @@ import { Container, Row, Col, Stack, Image, Nav, NavLink } from 'react-bootstrap
 
 function SocialLink({label, link, iconClass}) {
   return <NavLink href={link||'#'} className='text-light'>
-    <i class={`bi bi-${iconClass}`}></i>
+    <i className={`bi bi-${iconClass}`}></i>
     <span style={{textDecoration: 'underline', marginLeft: '2ex'}}>
       {label}
     </span>
