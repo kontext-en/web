@@ -6,7 +6,7 @@ const path = require('path')
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/kontext',
+  base: '/web',
   resolve: {
     alias: {
       '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),
