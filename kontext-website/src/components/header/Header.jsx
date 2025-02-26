@@ -9,17 +9,17 @@ function Header() {
     <div>
       <Navbar expand="lg" className="bg-primary" variant="dark" >
         <Container>
-          <Navbar.Brand href="/">
+          <Navbar.Brand href="/web">
             Kontext
           </Navbar.Brand>
 
           <Navbar.Toggle aria-controls="basic-navbar-nav"/>
           <Navbar.Collapse id="basic-navbar-nav" >
             <Nav className="me-auto">
-              <Link to="/" className='text-light ms-4' style={{textDecoration: 'none'}}>
+              <Link to="/web" className='text-light ms-4' style={{textDecoration: 'none'}}>
                 Home
               </Link>
-              <Link to="/books" className='text-light ms-4' style={{textDecoration: 'none'}}>
+              <Link to="/web/books" className='text-light ms-4' style={{textDecoration: 'none'}}>
                 Books
               </Link>
             </Nav>
