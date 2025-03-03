@@ -4,12 +4,12 @@ import { useState, useEffect } from "react";
 import API_ROOT_URL from "../constants";
 import './../styles/gdoc.css'
 
-function Content({title, bookId}) {
+function Content({title, analysisId}) {
 
   const [htmlDoc, setHtmlDoc] = useState();
 
   useEffect(() => {
-    fetch(API_ROOT_URL+`/docs/${bookId}.html`)
+    fetch(API_ROOT_URL+`/docs/${analysisId}.html`)
     .then(data=>data.text())
     .then(data=>{
       console.log(data);
@@ -24,22 +24,22 @@ function Content({title, bookId}) {
   </Container>
 }
 
-function BookPage({}) {
+function AnalysisPage({}) {
 
   const {id} = useParams();
-  const [bookData, setBookData] = useState();
+  const [analysisData, setAnalysisData] = useState();
 
   useEffect(() => {
     fetch(API_ROOT_URL+"/content.json")
     .then(data=>data.json())
     .then(data=>{
       console.log(data);
-      setBookData(data);
+      setAnalysisData(data);
     })
     .catch(err=>console.error(err));
   }, [])
 
-  return <>{bookData&&<Content {...bookData[id]} bookId={id} />}</>
+  return <>{analysisData&&<Content {...analysisData[id]} analysisId={id} />}</>
 }
 
-export default BookPage
+export default AnalysisPage

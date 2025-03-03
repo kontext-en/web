@@ -1,23 +1,23 @@
 
 import { useEffect, useState } from 'react';
-import BookList from '../components/bookList/BookList.jsx'
+import AnalysisList from '../components/analysisList/AnalysisList.jsx'
 import API_ROOT_URL from "../constants.js";
 
-function Books() {
+function Analysis() {
 
-  const [bookData, setBookData] = useState();
+  const [analysisData, setAnalysisData] = useState();
 
   useEffect(() => {
     fetch(API_ROOT_URL+"/content.json")
     .then(data=>data.json())
     .then(data=>{
       console.log(data);
-      setBookData(data);
+      setAnalysisData(data);
     })
     .catch(err=>console.error(err));
   }, [])
 
-  return <>{bookData&&<BookList bookData={bookData} />}</>
+  return <>{analysisData&&<AnalysisList analysisData={analysisData} />}</>
 }
 
-export default Books
+export default Analysis

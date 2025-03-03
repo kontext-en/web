@@ -18,7 +18,7 @@ function Header() {
               <Link to="/web" className='text-light ms-4' style={{textDecoration: 'none'}}>
                 Home
               </Link>
-              <Link to="/web/books" className='text-light ms-4' style={{textDecoration: 'none'}}>
+              <Link to="/web/analysis" className='text-light ms-4' style={{textDecoration: 'none'}}>
                 Analyses
               </Link>
             </Nav>
