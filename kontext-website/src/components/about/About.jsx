@@ -1,7 +1,8 @@
 import React from 'react'
+import { Container, Row, Col } from "react-bootstrap"
 
 function About() {
-  return <section className='container-fluid p-4 ps-5 pe-5'>
+  return <>
     <h2 className='mb-4'>About Us</h2>
     <p className='ps-4'>
       Lorem ipsum dolor sit amet consectetur
@@ -11,7 +12,7 @@ function About() {
       exercitationem iste, eos esse numquam
       adipisci ut aperiam voluptas quas!
     </p>
-  </section>;
+  </>;
 }
 
 export default About;

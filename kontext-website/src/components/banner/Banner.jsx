@@ -1,9 +1,13 @@
 import React from 'react'
-import Image from 'react-bootstrap/Image'
-import puppy from './../../assets/puppy.png'
+import { Card } from 'react-bootstrap';
 
-function Banner() {
-  return <Image src={puppy} fluid/>;
+function Banner({img, children, className}) {
+  return <Card className={className}>
+    <Card.Img src={img.src} alt={img.alt} style={{maxHeight:'calc(100vh - 7rem)', objectFit: 'cover'}}/>
+    {children&&<Card.ImgOverlay style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+      {children}
+    </Card.ImgOverlay>}
+  </Card>
 }
 
 export default Banner;

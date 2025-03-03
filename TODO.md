@@ -1,5 +1,5 @@
-- [ ] Cleanup Homepage UI
+- [X] Cleanup Homepage UI
 - [ ] Add About Us section with pages for ppl who worked on project.
-- [ ] Add Banner Images to Book Analysis Page
+- [X] Add Banner Images to Book Analysis Page
 - [X] Refactor code to "Analysis" from "Book"
 - [ ] Add Image support to Documents

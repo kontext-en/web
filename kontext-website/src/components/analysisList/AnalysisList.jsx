@@ -26,9 +26,9 @@ function AnalysisCard({title, author, publishDate, img, id}) {
 function AnalysisList({analysisData}) {
   return <Container>
     <h2 style={{margin: '1rem 0'}}>Analyses:</h2>
-    <Row>
+    <Row style={{marginTop: '1rem', marginBottom: '1rem'}}>
       {Object.keys(analysisData).map(key => (
-        <Col key={key} xs={12/1} sm={12/1} md={12/2} lg={12/3} xl={12/4}>
+        <Col key={key} xs={12/1} sm={12/1} md={12/2} lg={12/3} xl={12/4} style={{margin:'1rem 0'}}>
           <AnalysisCard {...analysisData[key]} id={key}/>
         </Col>
       ))}

@@ -3,8 +3,9 @@ import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react";
 import API_ROOT_URL from "../constants";
 import './../styles/gdoc.css'
+import Banner from "../components/banner/Banner";
 
-function Content({title, analysisId}) {
+function Content({title, img, showTitleOverlay, analysisId}) {
 
   const [htmlDoc, setHtmlDoc] = useState();
 
@@ -19,7 +20,10 @@ function Content({title, analysisId}) {
   }, [])
 
   return <Container>
-    <h2 style={{padding: '1em 0', fontSize: '3em'}}>{title||'Loading...'}</h2>
+    {title&&<Banner className='my-4' img={{src: API_ROOT_URL+img.src, alt:img.alt}}>
+      {showTitleOverlay&&<h2 style={{padding: '1em 0', fontSize: '3em'}}>{title}</h2>}
+    </Banner>}
+    {!title&&<h2>Loading ...</h2>}
     <div className="gdoc" style={{fontSize: '1em', paddingBottom: '4em'}} dangerouslySetInnerHTML={{__html: htmlDoc}}/>
   </Container>
 }

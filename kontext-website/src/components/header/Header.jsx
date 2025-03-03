@@ -5,15 +5,15 @@ import Navbar from 'react-bootstrap/Navbar'
 import { Link } from 'react-router-dom';
 
 function Header() {
-  return (<Navbar expand="lg" className="bg-primary" variant="dark" >
+  return (<Navbar expand="sm" className="bg-primary" variant="dark"  >
         <Container>
           <Navbar.Brand href="/web">
-            Kontext
+            <h4>Kontext</h4>
           </Navbar.Brand>
     
           <Navbar.Toggle aria-controls="basic-navbar-nav"/>
     
-          <Navbar.Collapse id="basic-navbar-nav" >
+          <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Link to="/web" className='text-light ms-4' style={{textDecoration: 'none'}}>
                 Home
