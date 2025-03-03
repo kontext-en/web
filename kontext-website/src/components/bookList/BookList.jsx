@@ -1,6 +1,6 @@
 import { Stack, Card, Container, Col, Row } from "react-bootstrap"
 import { useNavigate } from "react-router-dom";
-import API_ROOT_URL from "../../tmpAPI";
+import API_ROOT_URL from "../../constants";
 
 function BookCard({title, author, publishDate, img, id}) {
   const nav = useNavigate();

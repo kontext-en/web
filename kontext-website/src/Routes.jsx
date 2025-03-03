@@ -4,20 +4,27 @@ import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } 
 import Index from './pages/Index.jsx'
 import Books from './pages/Books.jsx'
 import BookPage from './pages/BookPage.jsx';
-import App from './App.jsx';
+import Layout from './Layout.jsx';
+import ErrorPage from './pages/ErrorPage.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='/web' element={<App/>}>
-      <Route index element={<Index />} />
-      <Route path='books' element={<Books />} />
-      <Route path='books/:id' element={<BookPage />} />
+    <Route path='/' element={<Layout/>} errorElement={<ErrorPage/>}>
+      <Route index element={<Index/>}/>
+      <Route path='books' element={<Books/>}/>
+      <Route path='books/:id' element={<BookPage/>}/>
+
+      <Route path='web'>
+        <Route index element={<Index/>}/>
+        <Route path='books' element={<Books/>}/>
+        <Route path='books/:id' element={<BookPage/>}/>
+      </Route>
     </Route>
   )
 )
 
 function Routes({routes}) {
-  return <><RouterProvider router={router}/></>
+  return <RouterProvider router={router}/>
 }
 
 export default Routes
