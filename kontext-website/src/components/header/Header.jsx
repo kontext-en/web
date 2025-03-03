@@ -19,7 +19,7 @@ function Header() {
                 Home
               </Link>
               <Link to="/web/books" className='text-light ms-4' style={{textDecoration: 'none'}}>
-                Books
+                Analyses
               </Link>
             </Nav>
           </Navbar.Collapse>

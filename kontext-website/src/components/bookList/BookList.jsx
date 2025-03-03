@@ -25,7 +25,7 @@ function BookCard({title, author, publishDate, img, id}) {
 
 function BookList({bookData}) {
   return <Container>
-    <h2 style={{margin: '1rem 0'}}>Books:</h2>
+    <h2 style={{margin: '1rem 0'}}>Analyses:</h2>
     <Row>
       {Object.keys(bookData).map(key => (
         <Col key={key} xs={12/1} sm={12/1} md={12/2} lg={12/3} xl={12/4}>
