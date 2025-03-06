@@ -1,5 +1,3 @@
-- [X] Cleanup Homepage UI
 - [ ] Add About Us section with pages for ppl who worked on project.
-- [X] Add Banner Images to Book Analysis Page
-- [X] Refactor code to "Analysis" from "Book"
-- [ ] Add Image support to Documents
+- [ ] Refactor Document Display to use new JSON data.
+- [ ] Add Banner Image Functionality
