@@ -6,7 +6,7 @@ function Paragraph({elements}) {
     {elements?.map((e,i) => <Fragment key={i}>
       {(e['type']==="text")&&e['content']}
       {(e['type']==="image")&&<Image {...e} fluid />}
-      {(e['type']==="br")&&<br/>}
+      {(e['type']==="hr")&&<hr/>}
       {(e['type']==="link")&&<a href={e['href']}>{e['text']['content']}</a>}
     </Fragment>)}
   </p>

@@ -31,3 +31,9 @@ $theme-colors: (
 
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';
+
+hr {
+  margin: 2rem 0;
+  margin-bottom: 2.5rem;
+  background-color: red;
+}
