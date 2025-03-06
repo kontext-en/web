@@ -1,49 +1,43 @@
-import { Container } from "react-bootstrap"
+import { Container, Row } from "react-bootstrap"
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react";
 import API_ROOT_URL from "../constants";
-import './../styles/gdoc.css'
-import Banner from "../components/banner/Banner";
+import Section from "../components/analysis/Section";
+import Paragraph from "../components/analysis/Paragraph";
 
-function Content({title, img, showTitleOverlay, analysisId}) {
-
-  const [htmlDoc, setHtmlDoc] = useState();
-
-  useEffect(() => {
-    fetch(API_ROOT_URL+`/docs/${analysisId}.html`)
-    .then(data=>data.text())
-    .then(data=>{
-      console.log(data);
-      setHtmlDoc(data);
-    })
-    .catch(err=>console.error(err));
-  }, [])
+function Content({id, elements, title, metadata}) {
 
   return <Container>
-    {title&&<Banner className='my-4' img={{src: API_ROOT_URL+img.src, alt:img.alt}}>
-      {showTitleOverlay&&<h2 style={{padding: '1em 0', fontSize: '3em'}}>{title}</h2>}
-    </Banner>}
-    {!title&&<h2>Loading ...</h2>}
-    <div className="gdoc" style={{fontSize: '1em', paddingBottom: '4em'}} dangerouslySetInnerHTML={{__html: htmlDoc}}/>
+    <h1 id="analysisTitle">{title}</h1>
+    {elements.map((e, i) => (<Row key={i}>
+      {(e['type']==="section")&&<Section {...e} level={1} />}
+      {(e['type']==="paragraph")&&<Paragraph {...e}/>}
+    </Row>))}
   </Container>
 }
 
 function AnalysisPage({}) {
 
   const {id} = useParams();
-  const [analysisData, setAnalysisData] = useState();
+  const [contentData, setContentData] = useState();
 
   useEffect(() => {
-    fetch(API_ROOT_URL+"/content.json")
-    .then(data=>data.json())
-    .then(data=>{
+    fetch(`${API_ROOT_URL}/docs/${id}/content.json`)
+    .then(data => data.json())
+    .then(data => {
       console.log(data);
-      setAnalysisData(data);
+      setContentData(data);
     })
     .catch(err=>console.error(err));
-  }, [])
+  }, [id])
 
-  return <>{analysisData&&<Content {...analysisData[id]} analysisId={id} />}</>
+  return (
+    contentData
+    ?
+    <><Content {...contentData} /></>
+    :
+    <Container><h2>Loading ...</h2></Container>
+  )
 }
 
 export default AnalysisPage

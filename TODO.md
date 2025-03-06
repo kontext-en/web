@@ -1,3 +1,3 @@
 - [ ] Add About Us section with pages for ppl who worked on project.
-- [ ] Refactor Document Display to use new JSON data.
+- [X] Refactor Document Display to use new JSON data.
 - [ ] Add Banner Image Functionality
