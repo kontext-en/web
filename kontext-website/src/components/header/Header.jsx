@@ -21,6 +21,9 @@ function Header() {
               <Link to="/web/analysis" className='text-light ms-4' style={{textDecoration: 'none'}}>
                 Analyses
               </Link>
+              <Link to="/web/announcements" className='text-light ms-4' style={{textDecoration: 'none'}}>
+                Announcements
+              </Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

@@ -4,13 +4,19 @@ import { Container, Row, Col } from "react-bootstrap"
 function About() {
   return <>
     <h2 className='mb-4'>About Us</h2>
+    <hr />
     <p className='ps-4'>
-      Lorem ipsum dolor sit amet consectetur
-      adipisicing elit. Veritatis deserunt at
-      voluptates repudiandae dolorem architecto
-      enim sint porro quia, molestias
-      exercitationem iste, eos esse numquam
-      adipisci ut aperiam voluptas quas!
+      Korean literature is captivating readers worldwide,
+      offering rich stories and deep cultural insights.
+      Each work carries unique traditions, sentiments,
+      and historical elements that make it even more immersive.
+      Our platform enhances the reading experience by providing
+      cultural and historical context found in Korean literature.
+      <br />
+      <br />
+      By translating and explaining Korea-specific themes across
+      various genres, we help readers fully appreciate the depth
+      and beauty of Korean storytelling.
     </p>
   </>;
 }

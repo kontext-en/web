@@ -6,17 +6,20 @@ import Analysis from './pages/Analysis.jsx'
 import AnalysisPage from './pages/AnalysisPage.jsx';
 import Layout from './Layout.jsx';
 import ErrorPage from './pages/ErrorPage.jsx';
+import AnnouncementsPage from './pages/AnnouncementsPage.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<Layout/>} errorElement={<ErrorPage/>}>
       <Route index element={<Index/>}/>
       <Route path='analysis' element={<Analysis/>}/>
+      <Route path='announcements' element={<AnnouncementsPage/>}/>
       <Route path='analysis/:id' element={<AnalysisPage/>}/>
 
       <Route path='web'>
         <Route index element={<Index/>}/>
         <Route path='analysis' element={<Analysis/>}/>
+        <Route path='announcements' element={<AnnouncementsPage/>}/>
         <Route path='analysis/:id' element={<AnalysisPage/>}/>
       </Route>
     </Route>
