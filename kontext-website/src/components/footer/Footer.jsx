@@ -21,10 +21,8 @@ function Footer() {
       </Col>
       <Col>
         <Nav className='flex-column fs-6'>
-          <SocialLink label={'Phone'} iconClass={'telephone-fill'}/>
-          <SocialLink label={'Instagram'} iconClass={'instagram'}/>
-          <SocialLink label={'Etc'} iconClass={'question-lg'}/>
-          <SocialLink label={'Mail'} iconClass={'envelope-fill'}/>
+          <SocialLink label={'Phone'} iconClass={'telephone-fill'} link={'tel:+6086218025'}/>
+          <SocialLink label={'Mail'} iconClass={'envelope-fill'} link={'mailto:park659@wisc.edu'}/>
         </Nav>
       </Col>
     </Row>
