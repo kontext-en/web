@@ -37,3 +37,10 @@ hr {
   margin-bottom: 2.5rem;
   background-color: red;
 }
+
+.doc_list {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding-left: 4ex;
+}

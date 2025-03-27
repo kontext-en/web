@@ -1,17 +1,16 @@
-import { Container, Row } from "react-bootstrap"
-import { useParams } from "react-router-dom"
-import { useState, useEffect } from "react";
+import { Container, Row } from "react-bootstrap";
+
 import API_ROUTE_DATA from "../constants";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import Section from "../components/analysis/Section";
 import Paragraph from "../components/analysis/Paragraph";
-import Banner from "../components/banner/Banner";
 import List from "../components/analysis/List";
 
-function Content({id, elements, title, banner, metadata}) {
+function Content({id, elements, title, metadata}) {
 
   return <Container style={{paddingTop: "2rem", paddingBottom: "4rem"}}>
     <h1 id="analysisTitle">{title}:</h1>
-    {banner?.src&&<Banner style={{margin: "2rem 0"}} img={{'src':API_ROUTE_DATA.url+API_ROUTE_DATA.routes.analyses.url+banner.src, 'alt':banner.alt}} />}
     <hr/>
     {elements.map((e, i) => (<Row key={i}>
       {(e['type']==="section")&&<Section {...e} level={1} />}
@@ -23,13 +22,13 @@ function Content({id, elements, title, banner, metadata}) {
 
 }
 
-function AnalysisPage({}) {
+function MemoPage({}) {
 
   const {id} = useParams();
   const [contentData, setContentData] = useState();
 
   useEffect(() => {
-    fetch(API_ROUTE_DATA.url+API_ROUTE_DATA.routes.analyses.url+`${id}/content.json`)
+    fetch(API_ROUTE_DATA.url+API_ROUTE_DATA.routes.writersNook.url+`${id}/content.json`)
     .then(data => data.json())
     .then(data => {
       console.log(data);
@@ -39,12 +38,12 @@ function AnalysisPage({}) {
   }, [id])
 
   return (
-    contentData
-    ?
-    <Content {...contentData} />
-    :
-    <Container><h2>Loading ...</h2></Container>
-  )
+      contentData
+      ?
+      <Content {...contentData} />
+      :
+      <Container><h2>Loading ...</h2></Container>
+    )
 }
 
-export default AnalysisPage
+export default MemoPage

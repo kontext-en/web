@@ -1,5 +1,6 @@
 import { Container, Row } from "react-bootstrap"
 import Paragraph from "./Paragraph"
+import List from "./List"
 
 function Heading({level, children}) {
 
@@ -32,6 +33,7 @@ function Section({heading, elements, level}) {
         <Row key={i}>
           {(e['type']==="section")&&<Section {...e} level={level+1}/>}
           {(e['type']==="paragraph")&&<Paragraph {...e}/>}
+          {(e['type']==="list")&&<List {...e}/>}
         </Row>
     ))}
   </Container>

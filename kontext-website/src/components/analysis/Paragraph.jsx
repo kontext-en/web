@@ -1,5 +1,6 @@
 import { Fragment } from "react"
 import { Image } from "react-bootstrap"
+import List from "./List"
 
 function Paragraph({elements}) {
   return <p>
@@ -8,6 +9,7 @@ function Paragraph({elements}) {
       {(e['type']==="image")&&<Image {...e} fluid />}
       {(e['type']==="hr")&&<hr/>}
       {(e['type']==="link")&&<a href={e['href']}>{e['text']['content']}</a>}
+      {(e['type']==="list")&&<List {...e}/>}
     </Fragment>)}
   </p>
 }
