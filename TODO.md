@@ -1,1 +1,3 @@
 - [ ] Add About Us section with pages for ppl who worked on project
+- [ ] Rework Backend API Parser to more general form
+- [ ] Rewrite Website Frontend to work with new api form

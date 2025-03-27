@@ -1,6 +1,5 @@
 import React from 'react'
 import { Card } from 'react-bootstrap';
-import API_ROOT_URL from '../../constants';
 
 function Banner({img, children, className, style}) {
   return <Card style={style} className={className}>
