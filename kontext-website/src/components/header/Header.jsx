@@ -21,11 +21,14 @@ function Header() {
               <Link to="/web/analysis" className='text-light ms-4' style={{textDecoration: 'none'}}>
                 Analyses
               </Link>
+              <Link to="/web/bookdata" className='text-light ms-4' style={{textDecoration: 'none'}}>
+                Book Info
+              </Link>
               <Link to="/web/writersnook" className='text-light ms-4' style={{textDecoration: 'none'}}>
                 Writer's Nook
               </Link>
-              <Link to="/web/bookdata" className='text-light ms-4' style={{textDecoration: 'none'}}>
-                Book Info
+              <Link to="/web/people" className='text-light ms-4' style={{textDecoration: 'none'}}>
+                People
               </Link>
             </Nav>
           </Navbar.Collapse>

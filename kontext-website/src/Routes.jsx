@@ -10,6 +10,7 @@ import WritersNookListPage from './pages/WritersNookListPage.jsx';
 import MemoPage from './pages/MemoPage.jsx';
 import BookDataListPage from './pages/BookDataListPage.jsx';
 import BookDataPage from './pages/BookDataPage.jsx';
+import PeoplePage from './pages/PeoplePage.jsx';
 
 const router = createHashRouter(
   createRoutesFromElements(
@@ -22,6 +23,7 @@ const router = createHashRouter(
       <Route path='writersnook/:id' element={<MemoPage/>}/>
       <Route path='bookdata' element={<BookDataListPage/>}/>
       <Route path='bookdata/:id' element={<BookDataPage/>}/>
+      <Route path='people' element={<PeoplePage/>}/>
 
       <Route path='web'>
         <Route index element={<Index/>}/>
@@ -31,6 +33,7 @@ const router = createHashRouter(
         <Route path='writersnook/:id' element={<MemoPage/>}/>
         <Route path='bookdata' element={<BookDataListPage/>}/>
         <Route path='bookdata/:id' element={<BookDataPage/>}/>
+        <Route path='people' element={<PeoplePage/>}/>
       </Route>
       
     </Route>

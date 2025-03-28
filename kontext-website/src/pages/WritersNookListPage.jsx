@@ -18,8 +18,8 @@ function WritersNookListPage({}) {
   }, [])
 
   return <Container>
-  {writersNookData&&<MemoList memoData={writersNookData?.items} tags={writersNookData?.tags} />}
-</Container>
+    {writersNookData&&<MemoList memoData={writersNookData?.items} tags={writersNookData?.tags} />}
+  </Container>
 }
 
 export default WritersNookListPage
